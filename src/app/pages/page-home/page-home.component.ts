@@ -8,6 +8,7 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
+  isDivDisplay = false;
   plantsToDisplay: Plant[] = [];
 
   constructor(private plantsService: PlantsService) { }
@@ -18,5 +19,11 @@ export class PageHomeComponent implements OnInit {
       this.plantsToDisplay = [...data];
     });
   }
-
+  displayDiv() {
+    this.isDivDisplay = !this.isDivDisplay;
+  }
 }
+
+
+
+

@@ -10,6 +10,7 @@ import { PageMyPlantsComponent } from './pages/page-my-plants/page-my-plants.com
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CardPlantComponent } from './componenents/card-plant/card-plant.component';
+import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardPlantComponent } from './componenents/card-plant/card-plant.compone
     PageMyPlantsComponent,
     PageAdminComponent,
     PageNotFoundComponent,
-    CardPlantComponent
+    CardPlantComponent,
+    FilterSideBarComponent
   ],
   imports: [
     BrowserModule,

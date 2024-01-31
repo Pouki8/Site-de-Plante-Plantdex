@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
 
   chercherPlant(event: any) {
     const inputContent = event.target.value;
-    this.texteUser.emit(inputContent);
+    this.texteUser.emit(event.target.value);
   }
 
 }

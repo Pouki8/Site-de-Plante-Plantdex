@@ -12,6 +12,8 @@ export class PageHomeComponent implements OnInit {
   categoriesToSend: string[] = [];
   allPlants: Plant[] = [];
 
+  saveSearchText: string = '';
+  saveFilter: string[] = ["orchidés"];
 
   constructor(private plantsService: PlantsService) { }
 
@@ -45,24 +47,28 @@ export class PageHomeComponent implements OnInit {
     return CategoriesSansDoublonArray;
   }
 
-  filterPlantsByCategories(categories: string[]) {
-    this.plantsToDisplay = this.allPlants.filter((plant) =>
-      categories.includes(plant.categorie)
-    );
-    /*ou 
-      filterPlantsByCategories(categories: string[]) {
-    this.plantsToDisplay = this.allPlants.filter((x) =>
-      categories.includes(x.categorie)
-    );
-    */
+
+  onSearchText(search: string) {
+    this.saveSearchText = search;
+    this.genericFilter();
   }
 
-  selectNomPlant(content: string) {
-    console.log("contenu reçu : ", content);
+  searchToFilter(propertyFilter: string[]) {
+    this.saveFilter = propertyFilter;
+    this.genericFilter();
+  }
+
+  genericFilter() {
+    let filterPlant = [...this.allPlants];
     this.plantsToDisplay = this.allPlants.filter((plant) =>
-      plant.nom.toLowerCase().includes(content.toLowerCase()));
+      this.saveFilter.includes(plant.categorie)
+    );
+    this.plantsToDisplay = this.plantsToDisplay.filter((plant) =>
+      plant.nom.toLowerCase().includes(this.saveSearchText.toLowerCase())
+    );
   }
 }
+
 
 
 

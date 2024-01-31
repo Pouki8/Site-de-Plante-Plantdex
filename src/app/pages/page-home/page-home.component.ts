@@ -56,6 +56,12 @@ export class PageHomeComponent implements OnInit {
     );
     */
   }
+
+  selectNomPlant(content: string) {
+    console.log("contenu reçu : ", content);
+    this.plantsToDisplay = this.allPlants.filter((plant) =>
+      plant.nom.toLowerCase().includes(content.toLowerCase()));
+  }
 }
 
 

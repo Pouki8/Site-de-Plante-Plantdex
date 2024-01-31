@@ -11,9 +11,9 @@ export class PageHomeComponent implements OnInit {
   plantsToDisplay: Plant[] = [];
   categoriesToSend: string[] = [];
   allPlants: Plant[] = [];
-
+  saveFilter: string[] = [];
   saveSearchText: string = '';
-  saveFilter: string[] = ["orchidés"];
+
 
   constructor(private plantsService: PlantsService) { }
 
@@ -24,6 +24,7 @@ export class PageHomeComponent implements OnInit {
       //ici
       this.categoriesToSend = this.getCategoriesFromPlants(data);
       this.allPlants = [...data];
+      this.saveFilter = [...this.categoriesToSend];
     });
   }
 
@@ -50,11 +51,13 @@ export class PageHomeComponent implements OnInit {
 
   onSearchText(search: string) {
     this.saveSearchText = search;
+    console.log("saisie texte : ", this.saveSearchText)
     this.genericFilter();
   }
 
   searchToFilter(propertyFilter: string[]) {
     this.saveFilter = propertyFilter;
+    console.log("select catégorie : ", this.saveFilter)
     this.genericFilter();
   }
 

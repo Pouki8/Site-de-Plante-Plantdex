@@ -1,0 +1,31 @@
+    .text-sort {
+        margin-left: 25px;
+    }
+
+    .sort-bar {
+
+        height: 2.2rem;
+        text-align: center;
+        width: 10rem;
+        position: sticky;
+        top: 56px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    .sort-bar:hover {
+        box-shadow: 1px 1px 1px 1px;
+    }
+
+    .green {
+        color: green;
+    }
+
+
+    .blue {
+        color: blue;
+    }
+
+    .yellow {
+        color: rgb(183, 132, 4);
+    }

@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { CardPlantComponent } from './componenents/card-plant/card-plant.component';
 import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SortBarComponent } from './components/sort-bar/sort-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     PageNotFoundComponent,
     CardPlantComponent,
     FilterSideBarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SortBarComponent
   ],
   imports: [
     BrowserModule,

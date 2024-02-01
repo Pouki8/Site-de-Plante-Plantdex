@@ -2,7 +2,10 @@
   <app-filter-side-bar [categoriesToDisplay]="categoriesToSend" (categoriesToFilter)="searchToFilter($event)">
   </app-filter-side-bar>
   <div>
-    <app-search-bar (texteUser)="onSearchText($event)" class="search-bar"></app-search-bar>
+    <div><app-search-bar (texteUser)="onSearchText($event)" class="search-bar"></app-search-bar></div>
+
+    <div><app-sort-bar></app-sort-bar></div>
+
     <div class="container-plants p-4">
 
       <app-card-plant *ngFor="let plantData of plantsToDisplay" [plant]="plantData">

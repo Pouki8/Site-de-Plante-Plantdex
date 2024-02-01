@@ -62,7 +62,7 @@ export class PageHomeComponent implements OnInit {
   }
 
   genericFilter() {
-    let filterPlant = [...this.allPlants];
+
     this.plantsToDisplay = this.allPlants.filter((plant) =>
       this.saveFilter.includes(plant.categorie)
     );

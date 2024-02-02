@@ -9,7 +9,11 @@ import { PlantsService } from 'src/app/services/plants.service';
 })
 export class PageHomeComponent implements OnInit {
   plantsToDisplay: Plant[] = [];
+  // faire le ToDisplay de l'arrosage :
+
   categoriesToSend: string[] = [];
+  //faire le ToSend de l'arrosage :
+
   allPlants: Plant[] = [];
   saveFilter: string[] = [];
   saveSearchText: string = '';
@@ -23,6 +27,7 @@ export class PageHomeComponent implements OnInit {
       this.plantsToDisplay = [...data];
       //ici
       this.categoriesToSend = this.getCategoriesFromPlants(data);
+
       this.allPlants = [...data];
       this.saveFilter = [...this.categoriesToSend];
     });

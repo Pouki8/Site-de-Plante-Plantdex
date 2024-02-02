@@ -13,19 +13,36 @@
         margin-left: 10px;
     }
 
-    .sort-bar:hover {
-        box-shadow: 1px 1px 1px 1px;
-    }
-
     .green {
         color: green;
+        border: solid green;
+        border-radius: 5%;
+    }
+
+    .green:hover {
+        background-color: green;
+        color: white;
     }
 
 
     .blue {
         color: blue;
+        border: solid blue;
+        border-radius: 5%;
+    }
+
+    .blue:hover {
+        background-color: blue;
+        color: white;
     }
 
     .yellow {
-        color: rgb(183, 132, 4);
+        color: rgb(238, 128, 3);
+        border: solid rgb(238, 128, 3);
+        border-radius: 5%;
+    }
+
+    .yellow:hover {
+        background-color: rgb(238, 128, 3);
+        color: white;
     }

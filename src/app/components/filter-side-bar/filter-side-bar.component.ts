@@ -10,7 +10,9 @@ export class FilterSideBarComponent {
   @Input() categoriesToDisplay!: string[];
   checkedCategories: string[] = [];
 
+
   @Output() categoriesToFilter = new EventEmitter<string[]>();
+
 
   onCheckedCategories(event: Event) {
     const target = event.target as HTMLInputElement;
@@ -39,4 +41,5 @@ export class FilterSideBarComponent {
     this.categoriesToFilter.emit(this.checkedCategories);
     //console.log(this.checkedCategories);
   }
+
 }

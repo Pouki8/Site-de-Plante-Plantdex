@@ -13,12 +13,20 @@
       </label>
     </div>
     <hr>
-    <div class="px-3">
+    <div>
       <p class="fs-5 fw-semibold">Arrosage</p>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="">
-        <label class="form-check-label" for="">
+      <div class="form-check" *ngFor="let Arrosage of arrosageToDisplay">
+        <input class="form-check-input" type="checkbox" value="{{Arrosage}}" id="{{Arrosage}}">
+        <label class="form-check-label" for="{{Arrosage}}">{{Arrosage}}
         </label>
       </div>
+      <hr>
+      <div>
+        <p class="fs-5 fw-semibold">Ensoleillement</p>
+        <div class="form-check" *ngFor="let Soleil of ensoleillementToDisplay">
+          <input class="form-check-input" type="checkbox" value="{{Soleil}}" id="{{Soleil}}">
+          <label class="form-check-label" for="{{Soleil}}">{{Soleil}}
+          </label>
+        </div>
+      </div>
     </div>
-  </div>

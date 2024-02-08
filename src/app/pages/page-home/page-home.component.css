@@ -1,12 +1,24 @@
 .container-plants {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    /* gap: 2rem; */
+    justify-content: space-between;
+    padding-top: 0;
+    align-content: space-between;
 }
 
-.search-bar {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 25px;
-    margin-right: 35px;
+.one-plant {
+    width: 32%;
+    margin-bottom: 1.5rem;
+}
+
+/*.container-search-bar {
+    justify-content: space-between;
+}*/
+
+@media (min-width: 1200px) {
+    .one-plant {
+        width: 23%;
+    }
 }

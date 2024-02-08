@@ -1,10 +1,20 @@
-<div class="card" style="width: 18rem">
+<div class="card">
   <img [src]="plant.image" class="card-img-top" [alt]="plant.nom" />
   <div class="card-body">
     <h5 class="card-title text-truncate" [title]="plant.nom">{{ plant.nom }}</h5>
     <p class="card-text">{{ plant.categorie }}</p>
-    <p class="glyphicon glyphicon-tint">{{ plant.arrosage }}</p>
-    <p>{{ plant.soleil }}</p>
+
+    <div class="space d-flex justify-content-around">
+      <div>
+        <p><strong>Arrosage</strong></p>
+        <app-icon class="arrosage" [iconName]="'sun-fill'"></app-icon>
+      </div>
+      <div>
+        <p><strong>Exposition</strong></p>
+        <app-icon class="exposition" [iconName]="'sun-fill'"></app-icon>
+      </div>
+    </div>
+
     <a href="#" class="btn btn-success">Je l'ai !</a>
   </div>
 </div>

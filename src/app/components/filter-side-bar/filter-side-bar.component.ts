@@ -10,6 +10,12 @@ export class FilterSideBarComponent {
   @Input() categoriesToDisplay!: string[];
   checkedCategories: string[] = [];
 
+  @Input() arrosageToDisplay!: number[];
+  checkedArrosage: number[] = [];
+
+  @Input() ensoleillementToDisplay!: string[];
+  checkedEnsoleillement: string[] = [];
+
 
   @Output() categoriesToFilter = new EventEmitter<string[]>();
 

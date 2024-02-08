@@ -13,7 +13,8 @@ export class PageHomeComponent implements OnInit {
 
   categoriesToSend: string[] = [];
   //faire le ToSend de l'arrosage :
-
+  arrosageToSend: number[] = [];
+  ensoleillementToSend: string[] = [];
   allPlants: Plant[] = [];
   saveFilter: string[] = [];
   saveSearchText: string = '';
@@ -27,11 +28,15 @@ export class PageHomeComponent implements OnInit {
       this.plantsToDisplay = [...data];
       //ici
       this.categoriesToSend = this.getCategoriesFromPlants(data);
-
+      //this pour l'arrosage :
+      this.arrosageToSend = this.getArrosageFromPlants(data);
+      this.ensoleillementToSend = this.getEnsoleillementFromPlants(data);
       this.allPlants = [...data];
       this.saveFilter = [...this.categoriesToSend];
     });
   }
+
+
 
   getCategoriesFromPlants(plants: Plant[]): string[] {
     // Retourner un tableau contenant les catégories des plantes de manière unique
@@ -53,6 +58,21 @@ export class PageHomeComponent implements OnInit {
     return CategoriesSansDoublonArray;
   }
 
+  getArrosageFromPlants(plants: Plant[]): number[] {
+    const arrosageArray = plants.map(plant => plant.arrosage);
+    const arrosageSansDoublon = new Set(arrosageArray);
+    const arrosageSansDoublonArray = Array.from(arrosageSansDoublon);
+    console.log(arrosageSansDoublonArray);
+    return arrosageSansDoublonArray;
+  }
+  getEnsoleillementFromPlants(plants: Plant[]): string[] {
+    const ensoleillementArray = plants.map(plant => plant.soleil);
+    const ensoleillementSansDoublon = new Set(ensoleillementArray);
+    const ensoleillementSansDoublonArray = Array.from(ensoleillementSansDoublon);
+    console.log(ensoleillementSansDoublonArray);
+    return ensoleillementSansDoublonArray;
+  }
+
 
   onSearchText(search: string) {
     this.saveSearchText = search;
@@ -61,13 +81,12 @@ export class PageHomeComponent implements OnInit {
   }
 
   searchToFilter(propertyFilter: string[]) {
-    this.saveFilter = propertyFilter;
+    this.saveFilter = [...propertyFilter];
     console.log("select catégorie : ", this.saveFilter)
     this.genericFilter();
   }
 
   genericFilter() {
-
     this.plantsToDisplay = this.allPlants.filter((plant) =>
       this.saveFilter.includes(plant.categorie)
     );
@@ -75,6 +94,18 @@ export class PageHomeComponent implements OnInit {
       plant.nom.toLowerCase().includes(this.saveSearchText.toLowerCase())
     );
   }
+
+
+  /*genericfilter(){
+   let filteredPlants = [...this.allPlants];
+
+   filteredPlants = filteredPlants.filter((x) =>
+   categories.includes(x.categorie)
+   );
+
+   filteredPlants = filteredPlants.filter(x => search)
+   this.plantsToDisplay = [...filteredPlants];
+  }*/
 }
 
 

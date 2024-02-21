@@ -17,6 +17,8 @@ export class PageHomeComponent implements OnInit {
   ensoleillementToSend: string[] = [];
   allPlants: Plant[] = [];
   saveFilter: string[] = [];
+  saveFilterArrosage: number[] = [];
+  saveFilterSoleil: string[] = [];
   saveSearchText: string = '';
 
 
@@ -33,6 +35,8 @@ export class PageHomeComponent implements OnInit {
       this.ensoleillementToSend = this.getEnsoleillementFromPlants(data);
       this.allPlants = [...data];
       this.saveFilter = [...this.categoriesToSend];
+      this.saveFilterArrosage = [...this.arrosageToSend];
+      this.saveFilterSoleil = [...this.ensoleillementToSend];
     });
   }
 
@@ -86,14 +90,36 @@ export class PageHomeComponent implements OnInit {
     this.genericFilter();
   }
 
+  searchToFilterArrosage(propertyFilter: number[]) {
+    this.saveFilterArrosage = [...propertyFilter];
+    console.log("Filtre arrosage : ", this.saveFilterArrosage)
+    this.genericFilter();
+  }
+
+  searchTofilterSoleil(propertyFilter: string[]) {
+    this.saveFilterSoleil = [...propertyFilter];
+    console.log("Filtre soleil : ", this.saveFilterSoleil)
+    this.genericFilter();
+  }
+
   genericFilter() {
     this.plantsToDisplay = this.allPlants.filter((plant) =>
-      this.saveFilter.includes(plant.categorie)
-    );
-    this.plantsToDisplay = this.plantsToDisplay.filter((plant) =>
+      this.saveFilter.includes(plant.categorie) &&
+      this.saveFilterSoleil.includes(plant.soleil) &&
+      this.saveFilterArrosage.includes(plant.arrosage) &&
       plant.nom.toLowerCase().includes(this.saveSearchText.toLowerCase())
     );
+    /*this.plantsToDisplay = this.allPlants.filter((plant) =>
+      this.saveFilterArrosage.includes(plant.arrosage))*/
   }
+  /* genericFilterSoleil() {
+     this.plantsToDisplay = this.allPlants.filter((plant) =>
+       this.saveFilterSoleil.includes(plant.soleil));
+     this.plantsToDisplay = this.plantsToDisplay.filter((plant) =>
+       plant.nom.toLowerCase().includes(this.saveSearchText.toLowerCase())
+     );
+   }*/
+
 
 
   /*genericfilter(){

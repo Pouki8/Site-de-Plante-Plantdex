@@ -16,7 +16,8 @@
     <div>
       <p class="fs-5 fw-semibold">Arrosage</p>
       <div class="form-check" *ngFor="let Arrosage of arrosageToDisplay">
-        <input class="form-check-input" type="checkbox" value="{{Arrosage}}" id="{{Arrosage}}">
+        <input class="form-check-input" type="checkbox" value="{{Arrosage}}" id="{{Arrosage}}"
+          (change)="onCheckedArrosage($event)">
         <label class="form-check-label" for="{{Arrosage}}">{{Arrosage}}
         </label>
       </div>
@@ -24,7 +25,8 @@
       <div>
         <p class="fs-5 fw-semibold">Ensoleillement</p>
         <div class="form-check" *ngFor="let Soleil of ensoleillementToDisplay">
-          <input class="form-check-input" type="checkbox" value="{{Soleil}}" id="{{Soleil}}">
+          <input class="form-check-input" type="checkbox" value="{{Soleil}}" id="{{Soleil}}"
+            (change)="onCheckedSoleil($event)">
           <label class="form-check-label" for="{{Soleil}}">{{Soleil}}
           </label>
         </div>

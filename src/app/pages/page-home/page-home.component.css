@@ -1,11 +1,11 @@
 .container-plants {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     /* gap: 2rem; */
-    justify-content: space-between;
+    padding: 1.5rem;
+    /* p-4 de bootstrap*/
     padding-top: 0;
-    align-content: space-between;
 }
 
 .one-plant {
@@ -13,9 +13,10 @@
     margin-bottom: 1.5rem;
 }
 
-/*.container-search-bar {
-    justify-content: space-between;
-}*/
+.container-search-bar {
+    padding: 1.5rem;
+    /* p-4 de bootstrap*/
+}
 
 @media (min-width: 1200px) {
     .one-plant {

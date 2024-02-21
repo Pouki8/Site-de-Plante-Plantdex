@@ -19,6 +19,9 @@ export class FilterSideBarComponent {
 
   @Output() categoriesToFilter = new EventEmitter<string[]>();
 
+  @Output() arrosageToFilter = new EventEmitter<number[]>();
+
+  @Output() ensoleillementToFilter = new EventEmitter<string[]>();
 
   onCheckedCategories(event: Event) {
     const target = event.target as HTMLInputElement;
@@ -48,4 +51,41 @@ export class FilterSideBarComponent {
     //console.log(this.checkedCategories);
   }
 
+  onCheckedArrosage(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const arrosageValue = parseInt(target.value); // Convertir en nombre
+
+    if (target.checked) {
+      if (this.checkedArrosage.length === this.arrosageToDisplay.length) {
+        this.checkedArrosage = [];
+      }
+      this.checkedArrosage.push(arrosageValue);
+    } else {
+      this.checkedArrosage = this.checkedArrosage.filter(
+        (arrosage) => arrosage !== arrosageValue);
+      if (this.checkedArrosage.length === 0) {
+        this.checkedArrosage = [...this.arrosageToDisplay];
+      }
+    } console.log("test arrosage : ", this.checkedArrosage)
+    this.arrosageToFilter.emit(this.checkedArrosage);
+  }
+
+  onCheckedSoleil(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.checked) {
+      if (this.checkedEnsoleillement.length === this.ensoleillementToDisplay.length) {
+        this.checkedEnsoleillement = [];
+      }
+      this.checkedEnsoleillement.push(target.value);
+    } else {
+      this.checkedEnsoleillement = this.checkedEnsoleillement.filter(
+        (soleil) => soleil !== target.value);
+      if (this.checkedEnsoleillement.length === 0) {
+        this.checkedEnsoleillement = [...this.ensoleillementToDisplay];
+      }
+    } console.log("test soleil : ", this.checkedEnsoleillement)
+    this.ensoleillementToFilter.emit(this.checkedEnsoleillement);
+  }
+
 }
+

@@ -1,5 +1,6 @@
 img {
-    max-height: 23rem;
+    max-height: 100%;
+    width: auto;
 }
 
 .space {
@@ -14,4 +15,9 @@ img {
 .exposition {
     font-size: 170%;
     color: rgb(255, 183, 0);
+}
+
+.container-img-plant {
+    text-align: center;
+    height: 15rem;
 }

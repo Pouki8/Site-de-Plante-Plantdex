@@ -1,17 +1,22 @@
 <div class="d-flex">
   <app-filter-side-bar [categoriesToDisplay]="categoriesToSend" (categoriesToFilter)="searchToFilter($event)"
-    [arrosageToDisplay]="arrosageToSend" [ensoleillementToDisplay]="ensoleillementToSend">
+    [arrosageToDisplay]="arrosageToSend" (arrosageToFilter)="searchToFilterArrosage($event)"
+    [ensoleillementToDisplay]="ensoleillementToSend" (ensoleillementToFilter)="searchTofilterSoleil($event)">
   </app-filter-side-bar>
 
   <div class="w-100%">
-    <div class="container-search-bar p-4"><app-search-bar (texteUser)="onSearchText($event)"></app-search-bar></div>
+    <div class="container-search-bar p-4">
+      <app-search-bar (texteUser)="onSearchText($event)"></app-search-bar>
+    </div>
 
-    <div><app-sort-bar></app-sort-bar></div>
+    <div>
+      <app-sort-bar>
 
-    <div class="container-plants p-4">
+      </app-sort-bar>
+    </div>
 
-      <app-card-plant class="one-plant" *ngFor="let plantData of plantsToDisplay" [plant]="plantData">
-      </app-card-plant>
+    <div class="container-plants">
+      <app-card-plant class="one-plant" *ngFor="let plantData of plantsToDisplay" [plant]="plantData"></app-card-plant>
     </div>
   </div>
 

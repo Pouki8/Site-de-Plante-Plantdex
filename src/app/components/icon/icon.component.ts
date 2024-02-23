@@ -20,11 +20,9 @@ export class IconComponent {
     *
     * 4 - Adapt to use the @Input value and replace the class
     */
-  @Input() iconName: string = '';
 
-  getIconClass() {
-    // Define a method to generate the class dynamically based on the input iconName
-    return `bi-${this.iconName}`;
-  }
+  @Input() iconName: "flower1" | "sun" | "sun-fill" | "droplet" | "droplet-fill" = "flower1";
+  @Input() iconColor: "orange" | "blue" = "orange";
+  @Input() iconSize: number = 4;
 
 }

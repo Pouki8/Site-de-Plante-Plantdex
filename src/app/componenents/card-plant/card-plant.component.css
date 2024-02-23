@@ -4,17 +4,20 @@ img {
 }
 
 .space {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.centre {
+    text-align: center;
+    margin-right: 45px;
 }
 
 .arrosage {
-    font-size: 170%;
-    color: blue;
+    font-size: 140%;
 }
 
 .exposition {
-    font-size: 170%;
-    color: rgb(255, 183, 0);
+    font-size: 140%;
 }
 
 .container-img-plant {

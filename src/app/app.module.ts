@@ -14,6 +14,7 @@ import { FilterSideBarComponent } from './components/filter-side-bar/filter-side
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SortBarComponent } from './components/sort-bar/sort-bar.component';
 import { IconComponent } from './components/icon/icon.component';
+import { FormControlComponent } from './components/form-control/form-control.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IconComponent } from './components/icon/icon.component';
     FilterSideBarComponent,
     SearchBarComponent,
     SortBarComponent,
-    IconComponent
+    IconComponent,
+    FormControlComponent
   ],
   imports: [
     BrowserModule,

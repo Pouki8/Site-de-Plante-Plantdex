@@ -21,8 +21,8 @@ export class IconComponent {
     * 4 - Adapt to use the @Input value and replace the class
     */
 
-  @Input() iconName: "flower1" | "sun" | "sun-fill" | "droplet" | "droplet-fill" = "flower1";
-  @Input() iconColor: "orange" | "blue" = "orange";
+  @Input() iconName: "flower1" | "sun" | "sun-fill" | "droplet" | "droplet-fill" | "trash" = "flower1";
+  @Input() iconColor: "orange" | "blue" | "red" = "orange";
   @Input() iconSize: number = 4;
 
 }

@@ -14,7 +14,9 @@ import { FilterSideBarComponent } from './components/filter-side-bar/filter-side
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SortBarComponent } from './components/sort-bar/sort-bar.component';
 import { IconComponent } from './components/icon/icon.component';
-import { FormControlComponent } from './components/form-control/form-control.component';
+import { PageNewPlantComponent } from './pages/page-new-plant/page-new-plant.component';
+import { FormPlantComponent } from './components/form-plant/form-plant.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { FormControlComponent } from './components/form-control/form-control.com
     SearchBarComponent,
     SortBarComponent,
     IconComponent,
-    FormControlComponent
+    PageNewPlantComponent,
+    FormPlantComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,4 +20,17 @@ export class PageAdminComponent implements OnInit {
     });
   }
 
+  onClickDeletePlant(plantId: number) {
+    this.plantsService.deletePlant(plantId).subscribe({
+      next: () => {
+        this.plantsToDisplay = this.plantsToDisplay.filter(
+          x => x.id !== plantId
+        );
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
 }

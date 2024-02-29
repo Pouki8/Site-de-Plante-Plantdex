@@ -13,4 +13,12 @@ export class PlantsService {
   getPlants(): Observable<Plant[]> {
     return this.http.get<Plant[]>('http://localhost:3000/plants');
   }
+
+  createNewPlant(plantToCreate: Plant): Observable<Plant> {
+    return this.http.post<Plant>('http://localhost:3000/plants', plantToCreate);
+  }
+
+  deletePlant(plantId: number) {
+    return this.http.delete(`http://localhost:3000/plants/${plantId}`);
+  }
 }

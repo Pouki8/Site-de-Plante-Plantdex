@@ -1,5 +1,8 @@
 <h1>Page Admin plandex</h1>
 
+<button class="btn btn-success" routerLink="new-plant">Ajouter une plante</button>
+<!-- ou [routerLink]="new-plant" -->
+<!-- ou routerLink="/admin/new-plant" -->
 <table class="table">
     <thead>
         <th>Nom</th>
@@ -7,15 +10,21 @@
         <th>Catégorie</th>
         <th>Besoin d'ensoleillement</th>
         <th>Besoin d'arrosage</th>
+        <th>Supprimer</th>
     </thead>
     <tbody>
         <tr *ngFor="let plant of plantsToDisplay">
             <td>{{ plant.nom }}</td>
-            <td><img src="{{ plant.image }}" alt="{{ plant.image }}" style="max-width: 80px; max-height: 80px">
+            <td><img src="{{ plant.image }}" alt="{{ plant.image }}" style="max-width: 50px; max-height: 50px">
             </td>
             <td>{{ plant.categorie }}</td>
             <td>{{ plant.arrosage }}</td>
             <td>{{ plant.soleil }}</td>
+            <td>
+                <button class="btn" (click)="onClickDeletePlant(plant.id)">
+                    <app-icon [iconName]="'trash'" [iconColor]="'red'" [iconSize]="2"></app-icon>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

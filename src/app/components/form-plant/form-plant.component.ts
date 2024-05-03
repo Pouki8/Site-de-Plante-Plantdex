@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Plant } from 'src/app/models/plant';
+import { PlantsService } from 'src/app/services/plants.service';
 
 @Component({
   selector: 'app-form-plant',
@@ -10,6 +11,7 @@ import { Plant } from 'src/app/models/plant';
 export class FormPlantComponent implements OnInit {
   formPlant!: FormGroup;
   @Output() submitFormPlant = new EventEmitter<Plant>();
+  @Input() dataPlant = PlantsService;
 
   ngOnInit(): void {
     this.initForm();

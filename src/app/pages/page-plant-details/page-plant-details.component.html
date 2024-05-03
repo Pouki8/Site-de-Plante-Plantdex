@@ -1,0 +1,16 @@
+<button class="btn btn-primary" routerLink="">Retour accueil</button>
+
+<div *ngIf="plant" class="container-plants">
+    <h1>{{ plant.nom }}</h1>
+    <h2>{{ plant.categorie }}</h2>
+    <div class="space d-flex justify-content-around">
+        <h4>Ensoleillement : {{ plant.soleil }}</h4>
+        <h4>Arrosage : {{ plant.arrosage }}</h4>
+    </div>
+    <div>
+        <img [src]="plant.image" [alt]="plant.nom" class="" style="max-width: 500px; max-height: 500px;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nemo vero aut, adipisci cupiditate quisquam
+            illum sint,
+        </p>
+    </div>
+</div>

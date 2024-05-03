@@ -17,6 +17,9 @@ import { IconComponent } from './components/icon/icon.component';
 import { PageNewPlantComponent } from './pages/page-new-plant/page-new-plant.component';
 import { FormPlantComponent } from './components/form-plant/form-plant.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant-details.component';
+import { PageEditPlantComponent } from './pages/page-edit-plant/page-edit-plant.component';
+import { PageIdentificationComponent } from './pages/page-identification/page-identification.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     IconComponent,
     PageNewPlantComponent,
     FormPlantComponent,
+    PagePlantDetailsComponent,
+    PageEditPlantComponent,
+    PageIdentificationComponent,
   ],
   imports: [
     BrowserModule,
